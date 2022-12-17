@@ -1,3 +1,6 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -62,6 +65,21 @@ class CustomerTm{
 }
 
 public class TableFormController {
+
+    public void initialize(){
+        loadCustomers();
+    }
+
+    private void loadCustomers() {
+        ObservableList<CustomerTm> tmList= FXCollections.observableArrayList();
+        for (Customer c:Db.customerTable
+             ) {
+            Button btn= new Button("Delete");
+            CustomerTm tm= new CustomerTm(c.getId(),c.getName(),c.getAddress(),c.getSalary(),btn);
+            tmList.add(tm);
+        }
+        tblCustomer.setItems(tmList);
+    }
 
     public TableView<CustomerTm> tblCustomer;
     public TableColumn colId;
