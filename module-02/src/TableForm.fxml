@@ -14,13 +14,13 @@
       <TextField layoutX="82.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="name" />
       <TextField layoutX="239.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="address" />
       <TextField layoutX="394.0" layoutY="14.0" prefHeight="25.0" prefWidth="192.0" promptText="salary" />
-      <TableView layoutX="13.0" layoutY="128.0" prefHeight="258.0" prefWidth="575.0">
+      <TableView fx:id="tblCustomer" layoutX="13.0" layoutY="128.0" prefHeight="258.0" prefWidth="575.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Id" />
-          <TableColumn prefWidth="88.0" text="Name" />
-            <TableColumn prefWidth="99.0" text="Address" />
-            <TableColumn prefWidth="197.0" text="Salary" />
-            <TableColumn prefWidth="113.0" text="Option" />
+          <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="colName" prefWidth="88.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="99.0" text="Address" />
+            <TableColumn fx:id="colSalary" prefWidth="197.0" text="Salary" />
+            <TableColumn fx:id="colOption" prefWidth="113.0" text="Option" />
         </columns>
       </TableView>
       <TextField layoutX="14.0" layoutY="93.0" prefHeight="25.0" prefWidth="237.0" promptText="Search" />
