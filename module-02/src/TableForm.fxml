@@ -10,10 +10,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TableFormController">
    <children>
-      <TextField layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="59.0" promptText="id" />
-      <TextField layoutX="82.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="name" />
-      <TextField layoutX="239.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="address" />
-      <TextField layoutX="394.0" layoutY="14.0" prefHeight="25.0" prefWidth="192.0" promptText="salary" />
+      <TextField fx:id="txtId" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="59.0" promptText="id" />
+      <TextField fx:id="txtName" layoutX="82.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="name" />
+      <TextField fx:id="txtAddress" layoutX="239.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" promptText="address" />
+      <TextField fx:id="txtSalary" layoutX="394.0" layoutY="14.0" prefHeight="25.0" prefWidth="192.0" promptText="salary" />
       <TableView fx:id="tblCustomer" layoutX="13.0" layoutY="128.0" prefHeight="258.0" prefWidth="575.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
@@ -24,7 +24,7 @@
         </columns>
       </TableView>
       <TextField layoutX="14.0" layoutY="93.0" prefHeight="25.0" prefWidth="237.0" promptText="Search" />
-      <Button layoutX="490.0" layoutY="48.0" mnemonicParsing="false" text="Save Customer">
+      <Button layoutX="490.0" layoutY="48.0" mnemonicParsing="false" onAction="#saveCustomer" text="Save Customer">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

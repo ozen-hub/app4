@@ -1,6 +1,7 @@
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -8,6 +9,18 @@ import java.util.Optional;
 
 
 public class TableFormController {
+
+    public TextField txtId;
+    public TextField txtName;
+    public TextField txtAddress;
+    public TextField txtSalary;
+
+    public TableView<CustomerTm> tblCustomer;
+    public TableColumn colId;
+    public TableColumn colName;
+    public TableColumn colAddress;
+    public TableColumn colOption;
+    public TableColumn colSalary;
 
     public void initialize() {
 
@@ -45,10 +58,16 @@ public class TableFormController {
         tblCustomer.setItems(tmList);
     }
 
-    public TableView<CustomerTm> tblCustomer;
-    public TableColumn colId;
-    public TableColumn colName;
-    public TableColumn colAddress;
-    public TableColumn colOption;
-    public TableColumn colSalary;
+    public void saveCustomer(ActionEvent actionEvent) {
+       Db.customerTable.add(new Customer(txtId.getText(),txtName.getText(),
+               txtAddress.getText(),Double.parseDouble(txtSalary.getText())));
+       loadCustomers();
+       clear();
+    }
+    private void clear(){
+        txtId.clear();
+        txtAddress.clear();
+        txtName.clear();
+        txtSalary.clear();
+    }
 }
