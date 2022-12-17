@@ -54,4 +54,16 @@ class Customer{
 
 public class Db {
     public static ArrayList<Customer> customerTable = new ArrayList<Customer>();
+    static {
+        customerTable.add(
+                new Customer("C001","Nimal","Colombo",25000)
+        );
+        customerTable.add(
+                new Customer("C002","Jagath","Panadura",75000)
+        );
+        customerTable.add(
+                new Customer("C003","Saman","Colomb",50000)
+        );
+
+    }
 }
